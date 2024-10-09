@@ -67,14 +67,16 @@ padding: .5rem;
   }
   
   .msg-container {
-    margin-top: 5rem;
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   #msg {
     background-color: #451349;
     color: #fff;
     font-size: 2rem;
-    display: inline;
     padding: 1rem;
     border-radius: 1rem;
   }  
