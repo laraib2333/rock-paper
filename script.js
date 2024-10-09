@@ -14,7 +14,7 @@ const genCompChoice = () => {
 };
 
 const drawGame = () => {
-  msg.innerText = "Game was Draw. Play again.";
+  msg.innerText = "A Tie! Ready for Another Round?";
   msg.style.backgroundColor = "#0c3b39";
 };
 
@@ -22,33 +22,32 @@ const showWinner = (userWin, userChoice, compChoice) => {
   if (userWin) {
     userScore++;
     userScorePara.innerText = userScore;
-    msg.innerText = `You win! Your ${userChoice} beats ${compChoice}`;
+    msg.innerText = `Victory! Your ${userChoice} triumphs over ${compChoice}!`;
     msg.style.backgroundColor = "green";
   } else {
     compScore++;
     compScorePara.innerText = compScore;
-    msg.innerText = `You lost. ${compChoice} beats your ${userChoice}`;
+    msg.innerText = `Better Luck Next Time! ${compChoice} outshines your ${userChoice}!`;
     msg.style.backgroundColor = "rgb(195, 105, 105)";
   }
 };
 
 const playGame = (userChoice) => {
-  //Generate computer choice
+
   const compChoice = genCompChoice();
 
   if (userChoice === compChoice) {
-    //Draw Game
     drawGame();
   } else {
     let userWin = true;
     if (userChoice === "rock") {
-      //scissors, paper
+
       userWin = compChoice === "paper" ? false : true;
     } else if (userChoice === "paper") {
-      //rock, scissors
+
       userWin = compChoice === "scissors" ? false : true;
     } else {
-      //rock, paper
+
       userWin = compChoice === "rock" ? false : true;
     }
     showWinner(userWin, userChoice, compChoice);
